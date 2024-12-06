@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 // import { 
 //   ArrowRightIcon, 
 //   BoltIcon,
@@ -12,16 +12,9 @@ import { useForm } from "react-hook-form";
 //   ShieldCheckIcon
 // } from "@heroicons/react/24/outline";
 
-type FormData = {
-  email: string;
-};
 
 export default function HomePage() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
-
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-  };
+  // const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-floralWhite">
@@ -131,16 +124,16 @@ export default function HomePage() {
           <section id="early-access" className="bg-white p-8 rounded-3xl shadow-xl border border-brand-jordyBlue/20 max-w-2xl mx-auto mb-24">
             <h3 className="text-2xl font-bold text-brand-licorice mb-2">Get on a call with us</h3>
             <p className="text-brand-licorice/70 mb-6">In our first iteration, we aim to make code reviews complete, accurate, and fast.</p>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={() => {console.log("submitted")}} className="space-y-4">
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
-                  {...register("email", { 
-                    required: "Email is required",
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "Invalid email address"
-                    }
-                  })}
+                  // {...register("email", { 
+                  //   required: "Email is required",
+                  //   pattern: {
+                  // value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  //message: "Invalid email address"
+                  //   }
+                  // })}
                   className="flex-1 px-8 py-5 text-lg rounded-2xl bg-brand-floralWhite border-2 border-brand-jordyBlue/30 text-brand-licorice placeholder-brand-licorice/50 focus:outline-none focus:border-brand-byzantineBlue focus:ring-2 focus:ring-brand-byzantineBlue/20"
                   placeholder="Enter your work email"
                 />
@@ -152,9 +145,9 @@ export default function HomePage() {
                   {/* <ArrowRightIcon className="w-6 h-6 sm:hidden" /> */}
                 </button>
               </div>
-              {errors.email && (
+              {/* {errors.email && (
                 <p className="text-brand-coquelicot text-sm font-medium">{errors.email.message}</p>
-              )}
+              )} */}
             </form>
           </section>
 
