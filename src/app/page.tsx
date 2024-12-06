@@ -1,20 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-// import { useForm } from "react-hook-form";
-// import { 
-//   ArrowRightIcon, 
-//   BoltIcon,
-//   CpuChipIcon,
-//   CommandLineIcon,
-//   CodeBracketIcon,
-//   ClockIcon,
-//   ShieldCheckIcon
-// } from "@heroicons/react/24/outline";
+import { useForm } from "react-hook-form";
+import { 
+  ArrowRightIcon, 
+  BoltIcon,
+  CpuChipIcon,
+  CommandLineIcon,
+  CodeBracketIcon,
+  ClockIcon,
+  ShieldCheckIcon
+} from "@heroicons/react/24/outline";
 
+type FormData = {
+  email: string;
+};
 
 export default function HomePage() {
-  // const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    // TODO: Implement email collection logic
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-floralWhite">
@@ -60,16 +68,16 @@ export default function HomePage() {
               <h3 className="text-2xl lg:text-3xl font-bold text-brand-licorice mb-6 text-left">What We Solve</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  {/* <BoltIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
-                  - <span className="text-lg text-brand-licorice">Reduce code review time by 40%</span>
+                  <BoltIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">Reduce code review time by 40%</span>
                 </li>
                 <li className="flex items-start">
-                  {/* <CpuChipIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
-                  - <span className="text-lg text-brand-licorice">Catch architectural issues early</span>
+                  <CpuChipIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">Catch architectural issues early</span>
                 </li>
                 <li className="flex items-start">
-                  {/* <CommandLineIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
-                  - <span className="text-lg text-brand-licorice">Bridge knowledge gaps in engineering teams</span>
+                  <CommandLineIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">Bridge knowledge gaps in engineering teams</span>
                 </li>
               </ul>
             </motion.div>
@@ -84,16 +92,16 @@ export default function HomePage() {
               <h3 className="text-2xl lg:text-3xl font-bold text-brand-licorice mb-6 text-left">How It Works</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  {/* <CodeBracketIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
-                  - <span className="text-lg text-brand-licorice">AI-powered intelligent code analysis</span>
+                  <CodeBracketIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">AI-powered intelligent code analysis</span>
                 </li>
                 <li className="flex items-start">
-                  {/* <ClockIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
-                  - <span className="text-lg text-brand-licorice">Seamless GitHub integration</span>
+                  <ClockIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">Seamless GitHub integration</span>
                 </li>
                 <li className="flex items-start">
-                  {/* <ShieldCheckIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
-                  - <span className="text-lg text-brand-licorice">Context-aware review assistance</span>
+                  <ShieldCheckIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">Context-aware review assistance</span>
                 </li>
               </ul>
             </motion.div>
@@ -124,16 +132,16 @@ export default function HomePage() {
           <section id="early-access" className="bg-white p-8 rounded-3xl shadow-xl border border-brand-jordyBlue/20 max-w-2xl mx-auto mb-24">
             <h3 className="text-2xl font-bold text-brand-licorice mb-2">Get on a call with us</h3>
             <p className="text-brand-licorice/70 mb-6">In our first iteration, we aim to make code reviews complete, accurate, and fast.</p>
-            <form onSubmit={() => {console.log("submitted")}} className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
-                  // {...register("email", { 
-                  //   required: "Email is required",
-                  //   pattern: {
-                  // value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  //message: "Invalid email address"
-                  //   }
-                  // })}
+                  {...register("email", { 
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Invalid email address"
+                    }
+                  })}
                   className="flex-1 px-8 py-5 text-lg rounded-2xl bg-brand-floralWhite border-2 border-brand-jordyBlue/30 text-brand-licorice placeholder-brand-licorice/50 focus:outline-none focus:border-brand-byzantineBlue focus:ring-2 focus:ring-brand-byzantineBlue/20"
                   placeholder="Enter your work email"
                 />
@@ -142,12 +150,12 @@ export default function HomePage() {
                   className="px-8 py-5 bg-brand-byzantineBlue rounded-2xl font-semibold text-white hover:bg-brand-sapphire transition-colors shadow-lg shadow-brand-byzantineBlue/20 text-lg whitespace-nowrap"
                 >
                   <span className="hidden sm:inline">Let&lsquo;s Chat</span>
-                  {/* <ArrowRightIcon className="w-6 h-6 sm:hidden" /> */}
+                  <ArrowRightIcon className="w-6 h-6 sm:hidden" />
                 </button>
               </div>
-              {/* {errors.email && (
+              {errors.email && (
                 <p className="text-brand-coquelicot text-sm font-medium">{errors.email.message}</p>
-              )} */}
+              )}
             </form>
           </section>
 
@@ -156,8 +164,8 @@ export default function HomePage() {
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-2xl font-bold text-brand-licorice mb-4">Coming Soon</h2>
               <div className="flex flex-wrap justify-center gap-8 text-brand-licorice/70">
-                <span> - Detailed Product Insights</span>
-                <span> - Free Pilot Program</span>
+                <span>✨ Detailed Product Insights</span>
+                <span> Free Pilot Program</span>
               </div>
             </div>
           </section>
