@@ -2,15 +2,15 @@
 
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { 
-  ArrowRightIcon, 
-  BoltIcon,
-  CpuChipIcon,
-  CommandLineIcon,
-  CodeBracketIcon,
-  ClockIcon,
-  ShieldCheckIcon
-} from "@heroicons/react/24/outline";
+// import { 
+//   ArrowRightIcon, 
+//   BoltIcon,
+//   CpuChipIcon,
+//   CommandLineIcon,
+//   CodeBracketIcon,
+//   ClockIcon,
+//   ShieldCheckIcon
+// } from "@heroicons/react/24/outline";
 
 type FormData = {
   email: string;
@@ -21,7 +21,6 @@ export default function HomePage() {
 
   const onSubmit = (data: FormData) => {
     console.log(data);
-    // TODO: Implement email collection logic
   };
 
   return (
@@ -68,16 +67,16 @@ export default function HomePage() {
               <h3 className="text-2xl lg:text-3xl font-bold text-brand-licorice mb-6 text-left">What We Solve</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <BoltIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">Reduce code review time by 40%</span>
+                  {/* <BoltIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
+                  - <span className="text-lg text-brand-licorice">Reduce code review time by 40%</span>
                 </li>
                 <li className="flex items-start">
-                  <CpuChipIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">Catch architectural issues early</span>
+                  {/* <CpuChipIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
+                  - <span className="text-lg text-brand-licorice">Catch architectural issues early</span>
                 </li>
                 <li className="flex items-start">
-                  <CommandLineIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">Bridge knowledge gaps in engineering teams</span>
+                  {/* <CommandLineIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
+                  - <span className="text-lg text-brand-licorice">Bridge knowledge gaps in engineering teams</span>
                 </li>
               </ul>
             </motion.div>
@@ -92,16 +91,16 @@ export default function HomePage() {
               <h3 className="text-2xl lg:text-3xl font-bold text-brand-licorice mb-6 text-left">How It Works</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CodeBracketIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">AI-powered intelligent code analysis</span>
+                  {/* <CodeBracketIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
+                  - <span className="text-lg text-brand-licorice">AI-powered intelligent code analysis</span>
                 </li>
                 <li className="flex items-start">
-                  <ClockIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">Seamless GitHub integration</span>
+                  {/* <ClockIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
+                  - <span className="text-lg text-brand-licorice">Seamless GitHub integration</span>
                 </li>
                 <li className="flex items-start">
-                  <ShieldCheckIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">Context-aware review assistance</span>
+                  {/* <ShieldCheckIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" /> */}
+                  - <span className="text-lg text-brand-licorice">Context-aware review assistance</span>
                 </li>
               </ul>
             </motion.div>
@@ -150,7 +149,7 @@ export default function HomePage() {
                   className="px-8 py-5 bg-brand-byzantineBlue rounded-2xl font-semibold text-white hover:bg-brand-sapphire transition-colors shadow-lg shadow-brand-byzantineBlue/20 text-lg whitespace-nowrap"
                 >
                   <span className="hidden sm:inline">Let&lsquo;s Chat</span>
-                  <ArrowRightIcon className="w-6 h-6 sm:hidden" />
+                  {/* <ArrowRightIcon className="w-6 h-6 sm:hidden" /> */}
                 </button>
               </div>
               {errors.email && (
