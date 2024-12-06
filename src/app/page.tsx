@@ -149,7 +149,7 @@ export default function HomePage() {
                   type="submit"
                   className="px-8 py-5 bg-brand-byzantineBlue rounded-2xl font-semibold text-white hover:bg-brand-sapphire transition-colors shadow-lg shadow-brand-byzantineBlue/20 text-lg whitespace-nowrap"
                 >
-                  <span className="hidden sm:inline">Let's Chat</span>
+                  <span className="hidden sm:inline">Let&lsquo;s Chat</span>
                   <ArrowRightIcon className="w-6 h-6 sm:hidden" />
                 </button>
               </div>
@@ -164,8 +164,8 @@ export default function HomePage() {
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-2xl font-bold text-brand-licorice mb-4">Coming Soon</h2>
               <div className="flex flex-wrap justify-center gap-8 text-brand-licorice/70">
-                <span>✨ Detailed Product Insights</span>
-                <span> Free Pilot Program</span>
+                <span> - Detailed Product Insights</span>
+                <span> - Free Pilot Program</span>
               </div>
             </div>
           </section>
