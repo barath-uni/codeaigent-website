@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { 
   ArrowRightIcon, 
-  BoltIcon,
-  CpuChipIcon,
-  CommandLineIcon,
-  CodeBracketIcon,
-  ClockIcon,
-  ShieldCheckIcon
+  RocketLaunchIcon,
+  PuzzlePieceIcon,
+  DocumentTextIcon,
+  CubeTransparentIcon,
+  ChatBubbleBottomCenterTextIcon,
+  ArrowPathIcon
 } from "@heroicons/react/24/outline";
 
 type FormData = {
@@ -31,8 +31,8 @@ export default function HomePage() {
         <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <h1 className="text-2xl font-bold text-brand-byzantineBlue">CodeAIgent</h1>
           <nav className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-            <a href="#what-we-solve" className="text-brand-licorice hover:text-brand-byzantineBlue px-4 py-2 transition-colors">What We Solve</a>
-            <a href="#how-it-works" className="text-brand-licorice hover:text-brand-byzantineBlue px-4 py-2 transition-colors">How It Works</a>
+            <a href="#features" className="text-brand-licorice hover:text-brand-byzantineBlue px-4 py-2 transition-colors">Features</a>
+            <a href="#workflow" className="text-brand-licorice hover:text-brand-byzantineBlue px-4 py-2 transition-colors">Workflow</a>
             <a href="#early-access" className="text-brand-licorice hover:text-brand-byzantineBlue px-4 py-2 transition-colors">Early Access</a>
           </nav>
         </div>
@@ -47,37 +47,37 @@ export default function HomePage() {
           className="text-center"
         >
           <h1 className="text-5xl md:text-7xl font-extrabold text-brand-licorice mb-6">
-            CodeAIgent: <span className="text-brand-byzantineBlue">AI-Powered</span> Code Review Intelligence
+            From <span className="text-brand-byzantineBlue">Trello</span> to Code in Minutes
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold text-brand-licorice mb-8">
-            Code Reviews: Boring and Distracting for Engineers
+            AI-Powered Development That Understands Your Team&apos;s Patterns
           </h2>
           <p className="text-xl text-brand-licorice/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Code reviews can be a source of annoyance and distraction. Our AI agents transform this process into a strategic advantage by integrating seamlessly with GitHub.
+            Transform your Trello cards into production-ready code scaffolds. Our AI understands your requirements, asks smart questions, and generates code that follows your team&apos;s conventions.
           </p>
 
-          {/* What We Solve & How It Works */}
+          {/* Features Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 max-w-6xl mx-auto">
-            {/* What We Solve */}
+            {/* Key Features */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="p-8 rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg border border-brand-jordyBlue/20"
             >
-              <h3 className="text-2xl lg:text-3xl font-bold text-brand-licorice mb-6 text-left">What We Solve</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold text-brand-licorice mb-6 text-left">Key Features</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <BoltIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">Reduce code review time by 40%</span>
+                  <RocketLaunchIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">Instant code generation from Trello cards</span>
                 </li>
                 <li className="flex items-start">
-                  <CpuChipIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">Catch architectural issues early</span>
+                  <PuzzlePieceIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">Pattern-aware implementation</span>
                 </li>
                 <li className="flex items-start">
-                  <CommandLineIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">Bridge knowledge gaps in engineering teams</span>
+                  <ChatBubbleBottomCenterTextIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">Interactive requirement clarification</span>
                 </li>
               </ul>
             </motion.div>
@@ -89,41 +89,41 @@ export default function HomePage() {
               transition={{ delay: 0.3 }}
               className="p-8 rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg border border-brand-jordyBlue/20"
             >
-              <h3 className="text-2xl lg:text-3xl font-bold text-brand-licorice mb-6 text-left">How It Works</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold text-brand-licorice mb-6 text-left">Workflow</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CodeBracketIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">AI-powered intelligent code analysis</span>
+                  <DocumentTextIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">Connect your Trello board</span>
                 </li>
                 <li className="flex items-start">
-                  <ClockIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">Seamless GitHub integration</span>
+                  <CubeTransparentIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">AI analyzes requirements and patterns</span>
                 </li>
                 <li className="flex items-start">
-                  <ShieldCheckIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
-                  <span className="text-lg text-brand-licorice">Context-aware review assistance</span>
+                  <ArrowPathIcon className="w-6 h-6 text-brand-byzantineBlue mr-3 flex-shrink-0" />
+                  <span className="text-lg text-brand-licorice">Generate and iterate on code</span>
                 </li>
               </ul>
             </motion.div>
           </div>
 
-          {/* How Are We Different */}
+          {/* Benefits Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="p-8 rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg border border-brand-jordyBlue/20 mb-16"
           >
-            <h3 className="text-2xl lg:text-3xl font-bold text-brand-licorice mb-6 text-left">How Are We Different</h3>
+            <h3 className="text-2xl lg:text-3xl font-bold text-brand-licorice mb-6 text-left">Benefits</h3>
             <ul className="space-y-4 text-left">
               <li className="flex items-start">
-                <span className="text-lg text-brand-licorice">Unlike other GitHub code review bots that work on the PR level, we have context of the entire repository.</span>
+                <span className="text-lg text-brand-licorice">Reduce initial development time by up to 60%</span>
               </li>
               <li className="flex items-start">
-                <span className="text-lg text-brand-licorice">Perform architectural reviews, understand images, write documentation, and suggest improvements.</span>
+                <span className="text-lg text-brand-licorice">Maintain consistent code structure across the team</span>
               </li>
               <li className="flex items-start">
-                <span className="text-lg text-brand-licorice">Understand design patterns and style guides.</span>
+                <span className="text-lg text-brand-licorice">Accelerate onboarding with pattern-aware code generation</span>
               </li>
             </ul>
           </motion.div>
