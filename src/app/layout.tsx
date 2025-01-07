@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
@@ -20,8 +19,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
-      <body className="antialiased bg-gradient-to-b from-white to-gray-50">
+    <html lang="en" className={GeistSans.variable}>
+      <body className="antialiased bg-brand-floralWhite">
         {children}
       </body>
     </html>

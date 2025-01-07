@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  ghost:
+    ports:
+      - "2368:2368"  # Allow external access for local development
+    environment:
+      - url=http://localhost:2368
+      - NODE_ENV=development 

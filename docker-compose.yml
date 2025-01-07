@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  ghost:
+    image: ghost:5-alpine
+    restart: always
+    environment:
+      # MySQL Config
+      - database__client=mysql
+      - database__connection__host=db
+      - database__connection__user=ghost
+      - database__connection__password=ghostpassword
+      - database__connection__database=ghost
+    volumes:
+      - ghost-data:/var/lib/ghost/content
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=ghostrootpassword
+      - MYSQL_USER=ghost
+      - MYSQL_PASSWORD=ghostpassword
+      - MYSQL_DATABASE=ghost
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  ghost-data:
+  mysql-data: 

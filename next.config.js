@@ -5,6 +5,24 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '2368',
+      },
+      {
+        protocol: 'https',
+        hostname: 'codeaigent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.ghost.org',
+      }
+    ],
+  },
+};
 
 export default config;
